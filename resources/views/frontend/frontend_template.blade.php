@@ -26,7 +26,7 @@
                     <!-- links -->
                     <ul class="navbar-nav">
                         <li class="nav-item mr-2">
-                            <a href="" class="nav-link text-light cool-link">Principal</a>
+                            <a href="{{ route('frontend_homepage') }}" class="nav-link text-light cool-link">Principal</a>
                         </li>
                         <li class="nav-item mr-2">
                             <a href="{{ url('/produtos')}}" class="nav-link text-light cool-link">Produtos</a>
@@ -98,7 +98,7 @@
                             </div>
                         </div>
                         <hr>
-                        <p></p>
+                        <p style="background-color: #fff;"></p>
                     </div>
                 </div>
             </div>
@@ -106,6 +106,8 @@
     </div> {{-- ID app --}}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/frontjs.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 </body>
