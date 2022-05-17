@@ -1,4 +1,6 @@
 @extends('frontend.frontend_template')
+
+@section('content')
 <div class="">
     <div class="row">
         <div class="col-md-12">
@@ -34,3 +36,4 @@
         </div>
     </div>
 </div>
+@endsection

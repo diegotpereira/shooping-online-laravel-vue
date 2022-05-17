@@ -9,8 +9,96 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <div class="app">
-        <h1>Frontend Template</h1>
+    <div id="app">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <!-- Brand -->
+                <a href="" class="navbar-brand">
+                    <img src="" alt="" class="img-responsive">
+                </a>
+                <button class="navbar-toggler">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse">
+                    <!-- links -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item mr-2">
+                            <a href="" class="nav-link text-light cool-link">Principal</a>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <a href="" class="nav-link text-light cool-link">Produtos</a>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <a href="" class="nav-link text-light cool-link">Sobre nós</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <form action="post">
+                            <div class="input-group">
+                                <input type="text" name="" id="" class="form-control" placeholder="Pesquisar produto" required aria-label="" aria-describedby="basic-addon2" id="nav-search">
+                                <div class="input-group-append mr-2">
+                                    <button class="btn btn-dark" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-light cool-link">
+                                <i class="fa fa-shopping-cart">Carrinho</i>
+                            </a>
+                            <a href="" class="nav-link text-light cool-link">
+                                <i class="fa fa-shopping-cart">Carrinho</i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-light cool-link">
+                                <i class="fa fa-sign-in">Entrar</i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-light cool-link">
+                                <i class="fa fa-sign-in">Cadastrar</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="mainContainer">
+            <div class="container">
+
+            </div>
+        </div>
+        <div id="footer-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4 footer-col">
+                                <h1>Informação</h1>
+                                <ul>
+                                    <li><a href="">Produtos</a></li>
+                                    <li><a href="">Sobre nós</a></li>
+                                    <li><a href="">Termos e Condições</a></li>
+                                    <li><a href="">Politicas de Uso</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4 footer-col">
+                                <h5>Contate-nos</h5>
+                                <ul>
+                                    <li></li>
+                                    <li><address></address></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
