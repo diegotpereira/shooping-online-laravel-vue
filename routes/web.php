@@ -17,4 +17,5 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/', 'Frontend\HomePageController@index')->name('frontend_homepage');
+Route::get('/', 'App\Http\Controllers\Frontend\HomePageController@index')->name('frontend_homepage');
+Route::get('/produtos', 'App\Http\Controllers\Frontend\ProdutoPageController@index')->name('frontend_produto_page');
