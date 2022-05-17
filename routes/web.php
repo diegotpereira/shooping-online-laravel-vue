@@ -19,3 +19,6 @@ Route::get('/welcome', function () {
 
 Route::get('/', 'App\Http\Controllers\Frontend\HomePageController@index')->name('frontend_homepage');
 Route::get('/produtos', 'App\Http\Controllers\Frontend\ProdutoPageController@index')->name('frontend_produto_page');
+
+Route::get('/sobre_nos', 'App\Http\Controllers\Frontend\PaginaController@index');
+

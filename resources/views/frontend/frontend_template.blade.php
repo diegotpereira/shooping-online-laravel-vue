@@ -32,7 +32,7 @@
                             <a href="{{ url('/produtos')}}" class="nav-link text-light cool-link">Produtos</a>
                         </li>
                         <li class="nav-item mr-2">
-                            <a href="" class="nav-link text-light cool-link">Sobre nós</a>
+                            <a href="{{ url ('/sobre_nos') }}" class="nav-link text-light cool-link">Sobre nós</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
@@ -70,7 +70,7 @@
         </div>{{-- navbar --}}
         <div class="mainContainer" style="background-color: #fff;">
             <div class="container">
-
+            @yield('content')
             </div>
         </div>
         @section('footer')
@@ -83,7 +83,7 @@
                                 <h1>Informação</h1>
                                 <ul>
                                     <li><a href="/produtos">Produtos</a></li>
-                                    <li><a href="">Sobre nós</a></li>
+                                    <li><a href="/sobre_nos">Sobre nós</a></li>
                                     <li><a href="">Termos e Condições</a></li>
                                     <li><a href="">Politicas de Uso</a></li>
                                 </ul>
