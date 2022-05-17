@@ -21,4 +21,6 @@ Route::get('/', 'App\Http\Controllers\Frontend\HomePageController@index')->name(
 Route::get('/produtos', 'App\Http\Controllers\Frontend\ProdutoPageController@index')->name('frontend_produto_page');
 
 Route::get('/sobre_nos', 'App\Http\Controllers\Frontend\PaginaController@index');
+Route::get('/login', 'App\Http\Controllers\Frontend\ClienteAuthController@login');
+
 

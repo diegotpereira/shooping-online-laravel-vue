@@ -56,6 +56,16 @@
                         </li>
                         <li class="nav-item">
                             <a href="" class="nav-link text-light cool-link">
+                                <i class="fa fa-sign-in">Minha Conta</i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link text-light cool-link">
+                                <i class="fa fa-sign-in">Sair</i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('login') }}" class="nav-link text-light cool-link">
                                 <i class="fa fa-sign-in">Entrar</i>
                             </a>
                         </li>
