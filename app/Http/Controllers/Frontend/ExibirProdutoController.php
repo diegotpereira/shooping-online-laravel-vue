@@ -6,9 +6,35 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\CompaniaDetalhes;
 use App\Models\Produto;
+use App\Models\ProdutoComVariante;
 
-class HomePageController extends Controller
+class ExibirProdutoController extends Controller
 {
+    public function exibirProduto($categoria, $produto)
+    {
+        $prod = Produto::where('produto_status', 1)
+        ->where('produto_url', $produto)
+        ->with('produtoSemVariante.inventario', 'produtoComVariantes')
+        ->first();
+
+        $variante = ProdutoComVariante::where('variante_status', 1)
+        ->where('product_number', $prod->number)
+        ->width('inventario')
+        ->first();
+
+        $produto_variantes = ProdutoComVariante::where('product_number', $prod->number)
+        ->orderBy('inventory_number')
+        ->with('inventario')
+        ->get();
+
+        return view('frontend.exibir_produto')->with([
+            'prod' => $prod,
+            'data' => 'Exibir Produto',
+            'variante' => $variante,
+            'produto_variantes' => $produto_variantes,
+            'compania' => CompaniaDetalhes::first()
+        ]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,15 +43,6 @@ class HomePageController extends Controller
     public function index()
     {
         //
-        $data = 'Home';
-        $produtos = Produto::limit(8)->orderBy('id')->get();
-        $compania = CompaniaDetalhes::first();
-        
-        return view('frontend.home')->with([
-            'data' => $data,
-            'produtos' => $produtos,
-            'compania' => $compania
-        ]);
     }
 
     /**

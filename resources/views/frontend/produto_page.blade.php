@@ -19,25 +19,32 @@
             </div>
             <div class="col-md-10 col-lg-10">
                 <h2 class="ifg-header mb-3">Produtos</h2>
-                <div class="row">
-                    <div class="col-md-3 d-flex align-items-stretch">
-                        <div class="card product-card">
-                            <a href=""></a>
-                            <div class="card-body d-flex flex-column">
-                                <span class="card-title text-center prod-name-link">
-                                    <a href=""></a>
-                                </span>
-                                <div class="text-center mb-3">
-                                    <input type="hidden" name="">
-                                    <span class="cart-prod-price"></span>
-                                    <span class="cart-prod-price"></span>
-                                    <span class="cart-prod-price"></span>
+
+                @if(count($produtos) > 0)
+                    <div class="row">
+                        @foreach($produtos as $produto)
+                            <div class="col-md-3 d-flex align-items-stretch">
+                                <div class="card product-card">
+                                    <a href="{{ route('cliente_exibir_produto', ['produto' => $produto->produto_url])">
+                                        <img src="{{$produto->produto_image_url }}" alt="{{ $produto->produto_nome }}" class="card-img-top">
+                                    </a>
+                                    <div class="card-body d-flex flex-column">
+                                        <span class="card-title text-center prod-name-link">
+                                            <a href=""></a>
+                                        </span>
+                                        <div class="text-center mb-3">
+                                            <input type="hidden" name="">
+                                            <span class="cart-prod-price"></span>
+                                            <span class="cart-prod-price"></span>
+                                            <span class="cart-prod-price"></span>
+                                        </div>
+                                        <a href=""></a>
+                                    </div>
                                 </div>
-                                <a href=""></a>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
-                </div>
+                @endif
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row justify-content-center">

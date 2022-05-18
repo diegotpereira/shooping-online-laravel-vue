@@ -18,7 +18,7 @@ class Produto extends Model
         return $this->belongsTo('App\Models\Categoria');
     }
     public function produtoNaoVariante() {
-        return $this->hasOne('App\Models\ProdutoSemVariante');
+        return $this->hasMany('App\Models\ProdutoSemVariante');
     }
     public function produtoComVariantes() {
         return $this->hasMany('App\Models\ProdutoComVariante');

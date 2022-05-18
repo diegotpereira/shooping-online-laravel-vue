@@ -23,4 +23,6 @@ Route::get('/produtos', 'App\Http\Controllers\Frontend\ProdutoPageController@ind
 Route::get('/sobre_nos', 'App\Http\Controllers\Frontend\PaginaController@index');
 Route::get('/login', 'App\Http\Controllers\Frontend\ClienteAuthController@login');
 
+Route::get('/produto/{categoria}/{produto}', 'App\Http\Controllers\Frontend\ExibirProdutoController@exibirProduto')->name('cliente_exibir_produto');
+
 

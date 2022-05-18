@@ -4,18 +4,44 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Categoria;
+use App\Models\CompaniaDetalhes;
+use App\Models\Produto;
 
 class ProdutoPageController extends Controller
 {
+    protected $data;
+
+    public function __construct()
+    {
+        $this->data = 'Produtos';
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        return view('frontend.produto_page');
+        if (!$request->query('ct')) {
+            # code...
+            $produtos = Produto::where('produto_status', 1)->paginate(12);
+        } else {
+            $categoria_id = Categoria::where('url', $request->query('ct'))->first()->id;
+            $produtos = Produto::where('produtos_status', 1)
+            ->where('categoria_id', $categoria_id)->paginate(12);
+        }
+        $compania = CompaniaDetalhes::first();
+        $categorias = Categoria::where('status', 1)->get();
+
+        return view('frontend.produto_page')->with([
+            'categorias' => $categorias,
+            'produtos' => $produtos,
+            'data' => $this->data,
+            'compania' => $compania
+        ]);
     }
 
     /**
