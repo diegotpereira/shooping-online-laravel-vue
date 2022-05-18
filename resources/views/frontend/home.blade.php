@@ -37,19 +37,34 @@
                             @foreach($produtos as $produto)
                                 <div class="col-md-3 d-flex align-items-stretch">
                                     <div class="card product-card">
-                                        <a href=""></a>
+                                        <a href="{{ route('cliente_exibir_produto', ['categoria'=>$produto->categoria->url, 'produto'=>$produto->produto_url]) }}">
+                                            <img class="card-img-top" src="{{$produto->produto_image_url }}" alt="{{ $produto->produto_nome }}">
+                                        </a>
                                         <div class="card-body d-flex flex-column">
+                                            
+                        
                                             <span class="card-title text-center prod-name-link">
-                                                <a href=""></a>
+                                                <a href="{{ route('cliente_exibir_produto', ['categoria'=>$produto->categoria->url, 'produto'=>$produto->produto_nome]) }}" class="product-card-link">{{ $produto->produto_nome }}</a>
                                             </span>
+
+
                                             <div class="text-center mb-3">
-                                                <input type="hidden" name="">
-                                                <span class="cart-prod-price"></span>
-                                                <span class="cart-prod-price"></span>
-                                                <span class="cart-prod-price"></span>
+                                                
+                                                <input type="hidden" name="p_num" id="p_num" value="{{$produto->number}}">
+                                                @if($produto->produto_has_variant < 1)
+                                                    <span class="cart-prod-price">&#8369; R$ </span>
+                                                @elseif (!is_null($produto->produtoComVariantes))
+                                                    @foreach ($produto->produtoComVariantes as $variante)
+                                                        @if($loop->first)
+                                                            <span class="cart-prod-price">&#8369;{{ number_format($variante->variante_preco,2) }}</span>
+                                                        @elseif($loop->lat)
+                                                            <span class="cart-prod-price">&#8369;{{ number_format($variante->variante_preco,2) }}</span>
+                                                        @endif
+                                                    @endforeach
+                                                @endif
                                             </div>
+                                            <a href="{{ route('cliente_exibir_produto', ['categoria'=>$produto->categoria->url, 'produto'=>$produto->produto_url]) }}" class="btn btn-outline-primary mt-auto">Exibir</a>
                                         </div>
-                                        <a href=""></a>
                                     </div>
                                 </div>
                             @endforeach
