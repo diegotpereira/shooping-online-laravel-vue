@@ -20,17 +20,18 @@
             <div class="col-md-10 col-lg-10">
                 <h2 class="ifg-header mb-3">Produtos</h2>
 
-                @if(count($produtos) > 0)
+                <!-- @if(count($produtos) > 0) -->
+                @if (is_countable($produtos) && count($produtos) > 0)
                     <div class="row">
                         @foreach($produtos as $produto)
                             <div class="col-md-3 d-flex align-items-stretch">
                                 <div class="card product-card">
-                                    <a href="{{ route('cliente_exibir_produto', ['produto' => $produto->produto_url])">
+                                    <a href="{{ route('cliente_exibir_produto', ['categoria'=>$produto->categoria->url, 'produto' => $produto->produto_url])">
                                         <img src="{{$produto->produto_image_url }}" alt="{{ $produto->produto_nome }}" class="card-img-top">
                                     </a>
                                     <div class="card-body d-flex flex-column">
                                         <span class="card-title text-center prod-name-link">
-                                            <a href=""></a>
+                                            <a href="{{ route('cliente_exibir_produto', ['produto' => $produto->produto_nome])" class="product-card-link">{{ $produto->produto_nome }}</a>
                                         </span>
                                         <div class="text-center mb-3">
                                             <input type="hidden" name="">

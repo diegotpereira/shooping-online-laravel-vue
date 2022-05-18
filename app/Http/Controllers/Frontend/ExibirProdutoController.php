@@ -19,7 +19,7 @@ class ExibirProdutoController extends Controller
 
         $variante = ProdutoComVariante::where('variante_status', 1)
         ->where('product_number', $prod->number)
-        ->width('inventario')
+        ->with('inventario')
         ->first();
 
         $produto_variantes = ProdutoComVariante::where('product_number', $prod->number)
