@@ -14,19 +14,19 @@
 
                 <!-- exibe o slide -->
                 <div class="carousel-inner">
-                    <div class="carousel-item-active">
-                        <img src="" alt="">
+                    <div class="carousel-item active">
+                        <img src="{{ asset('images/ADS.jpg') }}" alt="Slide 1">
                     </div>
                     <div class="carousel-item">
-                        <img src="" alt="">
+                        <img src="{{ asset('images/ADS.jpg') }}" alt="Slide 2">
                     </div>
                 </div>
 
                 <!-- controles direito e esquerdo -->
-                <a href="" class="carousel-control-prev" data-slide="prev">
+                <a href="#demo" class="carousel-control-prev" data-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                 </a>
-                <a href="" class="carousel-control-next" data-slide="next">
+                <a href="#demo" class="carousel-control-next" data-slide="next">
                     <span class="carousel-control-next-icon"></span>
                 </a>
             </div>
@@ -57,20 +57,20 @@
                                                     @foreach ($produto->produtoComVariantes as $variante)
                                                         @if($loop->first)
                                                             <span class="cart-prod-price">&#8369;{{ number_format($variante->variante_preco,2) }}</span>
-                                                        @elseif($loop->lat)
+                                                        @elseif($loop->last)
                                                             <span class="cart-prod-price">&#8369;{{ number_format($variante->variante_preco,2) }}</span>
                                                         @endif
                                                     @endforeach
                                                 @endif
                                             </div>
-                                            <a href="{{ route('cliente_exibir_produto', ['categoria'=>$produto->categoria->url, 'produto'=>$produto->produto_url]) }}" class="btn btn-outline-primary mt-auto">Exibir</a>
+                                            <a href="{{ route('cliente_exibir_produto', ['categoria'=>$produto->categoria->url, 'produto'=>$produto->produto_url]) }}" class="btn btn-outline-primary mt-auto">Exibir Produto</a>
                                         </div>
                                     </div>
                                 </div>
                             @endforeach
                         </div>
                         <center>
-                            <a href="">Veja mais</a>
+                            <a href="/produtos" class="btn btn-outline-primary mb-4">Veja mais</a>
                         </center>
                     @else
                         <div class="alert alert-warning text-center">

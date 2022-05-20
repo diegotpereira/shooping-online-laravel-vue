@@ -13,19 +13,19 @@ class ExibirProdutoController extends Controller
     public function exibirProduto($categoria, $produto)
     {
         $prod = Produto::where('produto_status', 1)
-        ->where('produto_url', $produto)
-        ->with('produtoSemVariante.inventario', 'produtoComVariantes')
-        ->first();
+            ->where('produto_url', $produto)
+            ->with('produtoSemVariante.inventario', 'produtoComVariantes')
+            ->first();
 
         $variante = ProdutoComVariante::where('variante_status', 1)
-        ->where('product_number', $prod->number)
-        ->with('inventario')
-        ->first();
+            ->where('product_number', $prod->number)
+            ->with('inventario')
+            ->first();
 
         $produto_variantes = ProdutoComVariante::where('product_number', $prod->number)
-        ->orderBy('inventory_number')
-        ->with('inventario')
-        ->get();
+            ->orderBy('inventory_number')
+            ->with('inventario')
+            ->get();
 
         return view('frontend.exibir_produto')->with([
             'prod' => $prod,
